@@ -1,25 +1,20 @@
 {
 	"compilerOptions": {
-	  "outDir": "./dist",
-	  "allowJs": true,
-	  "target": "es6",
-	  "moduleResolution": "node",
-	  "module": "commonjs",
-	  "allowSyntheticDefaultImports": true,
-	  "esModuleInterop": true,
-	  "declaration": true,
-	  "declarationMap": true,
-	  "skipLibCheck": true,
-	  "typeRoots": [
-		"./node_modules/@types",
-		"./src/types"
-	  ]
+		"outDir": "./dist",
+		"allowJs": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"declaration": true,
+		"declarationMap": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"typeRoots": ["./src/types"],
+		"rootDir": "./src",
+		"types": []
 	},
-	"include": [
-	  "./src/**/*"
-	],
-	"exclude": [
-	  "node_modules",
-	  "dist"
-	]
-  }
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
