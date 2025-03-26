@@ -1,21 +1,21 @@
 {
-  "name": "fastify-session-sqlite-store",
-  "version": "1.0.4",
+  "name": "@atroo/fastify-session-sqlite-store",
+  "version": "1.1.0",
   "description": "A fastify session store using sqlite",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-	  "test": "jest"
+    "test": "jest"
   },
   "keywords": [],
   "author": "oof2win2",
   "license": "MIT",
   "dependencies": {
-    "@mgcrea/fastify-session": "^0.14.2",
-    "better-sqlite3": "^7.4.4"
+    "@mgcrea/fastify-session": "^2.4.1",
+    "better-sqlite3": "^11.9.1"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.4.1",
+    "@types/better-sqlite3": "^7.6.12",
     "@types/events": "^3.0.0",
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",

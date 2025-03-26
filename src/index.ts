@@ -8,6 +8,12 @@ export type SQLiteStoreOptions = {
 	ttl?: number
 };
 
+interface DatabaseRawSession {
+	data: string
+	sid: string
+	expiry: number
+}
+
 export const DEFAULT_TTL = 86400; // one day in seconds
 export const DEFAULT_TABLENAME = "sessions"
 export const DEFAULT_DBNAME = "sessions.sqlite"
@@ -39,7 +45,7 @@ export class SQLiteStore<T extends SessionData = SessionData> extends EventEmitt
 	}
 
 	async get(sessionID: string): Promise<[SessionData, number]> {
-		const returned = this.client.prepare(`SELECT * FROM \`${this.tableName}\` WHERE sid = '${sessionID}'`).all()[0]
+		const returned = this.client.prepare<[string], DatabaseRawSession>(`SELECT * FROM \`${this.tableName}\` WHERE sid = ?`).get(sessionID)
 		if (!returned) return null
 		// if the session is expired
 		if (returned.expiry < Date.now()) {
